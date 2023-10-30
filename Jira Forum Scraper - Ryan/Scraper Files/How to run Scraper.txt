@@ -1,0 +1,19 @@
+Download Python and install Python:
+
+1. Go to the official Python website at https://www.python.org/downloads/.
+2. Click on the "Downloads" tab.
+3. Choose the appropriate Python version for your operating system and click on the download link.
+4. Run the downloaded installer.
+5. Check the box that says "Add Python to PATH" during the installation process.
+6. Follow the prompts to complete the installation.
+
+
+      
+How to Run the Script:
+
+1. Click on install required libraries.bat file to install libraries Automatically.
+2. Click on Run.bat file to run the scraper.
+3. Finally Scraper Start Running
+
+
+
