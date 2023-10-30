@@ -1,0 +1,4 @@
+art==6.1
+xextract==0.1.8
+lxml==4.9.3
+requests

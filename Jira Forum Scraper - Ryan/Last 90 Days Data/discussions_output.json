@@ -1,0 +1,1170 @@
+[
+    {
+        "title": "Which Oracle database version is best for jira service management",
+        "user": "Kamal Mirz\u0259yev",
+        "likes": "0",
+        "date": "10-29-2023",
+        "id": "2519045",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "Hi everyone, I am using Jira Service Management  5.10.0 and Jira Core  9.10.0 Which Oracle database version or edition is best one Please help.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Which-Oracle-database-version-is-best-for-jira-service/td-p/2519045"
+    },
+    {
+        "title": "Date Bug Problem",
+        "user": "joseph_roy",
+        "likes": "0",
+        "date": "10-24-2023",
+        "id": "2514993",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "All the date fields do not let us add a date that is more than 30 years into the future.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Date-Bug-Problem/td-p/2514993"
+    },
+    {
+        "title": "Jira Automation price change",
+        "user": "Srikanth Vuluru",
+        "likes": "0",
+        "date": "10-24-2023",
+        "id": "2514444",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Anyone on Jira Cloud thrilled about Automation price changes.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Jira-Automation-price-change/td-p/2514444"
+    },
+    {
+        "title": "Approver groups: measure individual waiting times",
+        "user": "Sil",
+        "likes": "0",
+        "date": "10-24-2023",
+        "id": "2514143",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "group",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "workflow"
+        ],
+        "details": "Hi!  I am currently speeding up processes by making multiple approval parallel to eachother. Previously I made an SLA which timed from the moment the status was set to waiting on team xx (which was automated within the workflow). Once an approval was accepted or denied, the status would change (by automation) and the SLA stopped timing. I am now using the group picker (multiple groups) field in automation to automatically request approval from different teams (depending on their status) Does anyone have any other approaches to this issue? Thanks in advance!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Approver-groups-measure-individual-waiting-times/td-p/2514143"
+    },
+    {
+        "title": "HowTo: Update Asset Custom Fields via REST API",
+        "user": "Salzi",
+        "likes": "0",
+        "date": "10-24-2023",
+        "id": "2514124",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "insight",
+            "jira-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "jira-software"
+        ],
+        "details": "Since this has cost me a lot of nerves over the last few days and unfortunately the documentation is silent about the required values, here is a short HowTo To update an issue and fields of an issue, use the following REST API endpoint: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-issueidorkey-put Unfortunately, the documentation says nothing about the format in which elements in an Asset Custom Field should be passed. This is what the JSON body must look like to fill an asset field. Alternatively, you can of course also use the other keywords from the documentation (\u201cadd\u201d, \u201cremove\u201d, etc.): \"update\": { The Global ID consists of the WorkspaceId and the objectId.  \"update\": {  I'm happy if the information helps a few more people \ud83d\ude42",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/HowTo-Update-Asset-Custom-Fields-via-REST-API/td-p/2514124"
+    },
+    {
+        "title": "Getting Text of ProForma multiple choice Values via Jira Automation and Assets",
+        "user": "Gleiciany Alves Cardoso",
+        "likes": "0",
+        "date": "10-23-2023",
+        "id": "2513616",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "automation",
+            "cloud",
+            "forms",
+            "insight",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "json"
+        ],
+        "details": "Retrieving a value (text) from the ProForma form However, after conducting extensive research and testing, I found a very effective solution where it is possible to retrieve the value of the selected option (yes, retrieve the text of the option) using Jira Automation and Assets. Assets will function in this scenario as an information repository and for each object, it will provide me with an ID which I will link in the automation so that Jira Automation can correlate the Proforma ID to the object ID in Assets. Why use Assets? By creating a custom field using Assets Key (example: BSM-1234) What is the logic in using Assets for this? By observing the structure of the JSON provided by ProForma \":\" (colon) USING ASSETS In my case, our Support team has severity matrices based on the product, and therefore, each type of issue has a different severity for priorities such as High, Blocker, Medium, and Low. Based on this, I structured a schema to have: My product > Business Flow and Type Of Issue by product and related each type to its severity  Finding the object number in JSON ProForma: Look in the \u201cEntite Properties\u201d \u201c:\u201d Note that only the numbers after the \":\" (colon) initial remains JIRA Automation - Creating the automation After structuring Assets with the information I need to search via automation, I started creating the logic: Trigger:  Create variable:  \"Entite properties\" (JSON) after the \":\" JSON - ticket: Variable in automation: {{issue.properties.\"proforma.forms.i1\".state.answers.6.choices.get(0).split(\":\").last}} Logs:  Now, I added the \"Lookup Objects\" action:  \"Key = BSM-{{updatebusinessflow}}\" \"Key\" \"{{updatebusinessflow}}\" Editing a specific field: ProForma JSON and the lookup Objects Key \"[New] Business Flow\" {{lookupObjects.BFName.BFN}} I hope this article helped you! Thanks :)",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Getting-Text-of-ProForma-multiple-choice-Values-via-Jira/td-p/2513616"
+    },
+    {
+        "title": "API Keys expiring --- how to fix it?",
+        "user": "Dinesh_Panchal",
+        "likes": "0",
+        "date": "10-23-2023",
+        "id": "2513146",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "API Keys expiring --- how to fix it?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/API-Keys-expiring-how-to-fix-it/td-p/2513146"
+    },
+    {
+        "title": "Major benefit of using Jira Service Management",
+        "user": "Ailyana Ali",
+        "likes": "0",
+        "date": "10-23-2023",
+        "id": "2513127",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "Hi everyone, I'm using Jira Service Management ( Jira Service Desk),\u00a0 a popular service management platform developed by Atlassian. I thought to share some major benefits of using this platform, so you can also benefit. It offers several benefits for organizations looking to streamline their service and support operations. Some of the key advantages I'm getting from Jira Service Management include: Streamlined Ticketing and Incident Management: Jira Service Management provides a robust ticketing system that allows me to efficiently manage and track incidents, requests, and tasks. It helps ensure that all customer queries and internal requests are properly documented and addressed. Customization and Workflow Automation: Jira Service Management allows me to customize workflows to match my specific advertising and printing services Self-Service Portals: It offers self-service portals that enable customers and employees to submit requests, report issues, and find answers to common questions without the need for direct support staff involvement. Knowledge Base Integration: Jira Service Management integrates with Confluence, another Atlassian product, which allows organizations to maintain and share a comprehensive knowledge base. This can help reduce the volume of support requests by providing customers and employees with self-help resources. SLA Management: I can define and manage service level agreements (SLAs) within Jira Service Management, ensuring that support requests are handled within specified timeframes, improving customer satisfaction. Reporting and Analytics: Jira Service Management provides reporting and analytics tools to track key performance metrics, identify trends, and make data-driven decisions to improve service quality and efficiency. Collaboration and Communication: The platform offers collaboration features like @mentions, comments, and notifications to facilitate effective communication among support teams, ensuring that everyone is on the same page. Scalability: Jira Service Management can scale with your organization's growing needs, making it suitable for small businesses and large enterprises. Integration with Other Tools: It integrates with a wide range of third-party applications and tools, making it easier to connect with your existing software ecosystem. Security and Compliance: Jira Service Management provides security features and compliance options to help organizations protect sensitive data and meet regulatory requirements. Mobile Accessibility: It offers mobile apps that allow support teams to stay connected and respond to requests while on the go. Customization and Extensibility: I can customize Jira Service Management to meet my specific requirements, so whether you're in IT service management, customer support, HR, or any other department, this feature works for all. Overall, Jira Service Management is a powerful tool for organizations looking to improve service delivery, enhance customer satisfaction, and streamline their service management processes. Its flexibility and integration capabilities make it a popular choice for a wide range of businesses and industries.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Major-benefit-of-using-Jira-Service-Management/td-p/2513127"
+    },
+    {
+        "title": "Migration from cloud to data center",
+        "user": "kiran pamulaparthy",
+        "likes": "0",
+        "date": "10-19-2023",
+        "id": "2511024",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "Hello",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Migration-from-cloud-to-data-center/td-p/2511024"
+    },
+    {
+        "title": "ITSM tool set",
+        "user": "Dominika Kura\u015b-Moskwa _Deviniti_",
+        "likes": "0",
+        "date": "10-19-2023",
+        "id": "2510097",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "confluence",
+            "jira-service-management",
+            "jira-service-management-unknown-hosting-type",
+            "unknown-hosting-type"
+        ],
+        "details": "Hi Community! Are you working in accordance with ITSM principles? If so, what tools do you use? Tell me more how these rules work for your team.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/ITSM-tool-set/td-p/2510097"
+    },
+    {
+        "title": "Webook - mirror 2 instances",
+        "user": "Amali",
+        "likes": "0",
+        "date": "10-18-2023",
+        "id": "2509759",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "Hey Community, I have the following requirement. There are 2 projects in 2 different instances. If an issue is created in 1 project in instance A or an update happens, both instances A & B need to register it. For example, if an issue is created in 1 project in instance A, instance B should create the same issue. If there is an update in issue in instance B, the same issue in instance A should reflect that update (bidirectional). How to set this up in Jira using automation webhook? I succeeded in creating an issue both instances. But updating doesn't work. If there a way to mirror all changes in any instance in the other?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Webook-mirror-2-instances/td-p/2509759"
+    },
+    {
+        "title": "Reverting to Portal-only",
+        "user": "Troy Anderson",
+        "likes": "0",
+        "date": "10-18-2023",
+        "id": "2509498",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Quite surprised there are no available Atlassian instructions for reverting a JSM Customer-level (i.e. external) account to a Portal-only account (or the equivalent).",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Reverting-to-Portal-only/td-p/2509498"
+    },
+    {
+        "title": "Can Jira Cloud Microsoft Teams app be used only for customers",
+        "user": "Leon Pavesic",
+        "likes": "1",
+        "date": "10-18-2023",
+        "id": "2508871",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi, Integrate Jira Cloud with Microsoft Teams | Jira Software Cloud | Atlassian Support",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Can-Jira-Cloud-Microsoft-Teams-app-be-used-only-for-customers/td-p/2508871"
+    },
+    {
+        "title": "This is amazing. Is there any plan for supporting server version?",
+        "user": "Raghu Patel",
+        "likes": "0",
+        "date": "10-12-2023",
+        "id": "2504282",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-unknown-hosting-type",
+            "unknown-hosting-type"
+        ],
+        "details": "Thes service are very nice \ud83d\udc4d",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/This-is-amazing-Is-there-any-plan-for-supporting-server-version/td-p/2504282"
+    },
+    {
+        "title": "JSM create screen toggle \"Use request type fields\" affects REST API calls",
+        "user": "J\u00f6rg Hoffmann",
+        "likes": "0",
+        "date": "10-12-2023",
+        "id": "2503928",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "rest-api"
+        ],
+        "details": "Hi, so as I just discovered, opening the create screen in the UI and toggling the \" Use request type fields\" on/off and then closing the screen again without creating an issue actually dictates which fields are required for rest api calls to endpoint \"rest/api/2/issue\". I couldn't find anything about that in the documentation and I couldn't find a way to actually add a json key and value to the REST calls to make sure the backend fields are used, and not the customer portal fields (which have different required fields in out setup) . I had to actually flip this switch in the UI, which I discovered on a wild hunch as I was desperately trying to figure out why I get blocked by customer portal field requirements. My expectation was that\u00a0\"rest/api/2/issue\" always uses the backend fields as it is not a JSM endpoint and if any endpoint was going to be using the customer portal fields instead then it would have been \"rest/servicedeskapi/request\", but this is not the case, it seems. I have not tested how\u00a0\"rest/servicedeskapi/request\" behaves yet. So maybe somebody could share their knowledge here if it simulates the customer or agent creation process. So this post is about raising awareness and asking if there is a way to set this within one of the issue creation REST calls or maybe if there is a different call entirely to set this flag.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/JSM-create-screen-toggle-quot-Use-request-type-fields-quot/td-p/2503928"
+    },
+    {
+        "title": "How do you prefer to refer to your customers in JSM?",
+        "user": "Dan Breyen",
+        "likes": "0",
+        "date": "10-12-2023",
+        "id": "2503925",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "I'm just curious.\u00a0 With Canned Responses you can insert the names of the Reporter, Assignee, and Current User. With that in mind, I'm curious how most people using JSM would like to refer to their customers when using Canned Responses.\u00a0 Would most people like to refer to them by just their first name, or would they much rather use their full name? It is my opinion, that it is much more personable to say \"Hi Jerry, just want to let you know we're working on your issue. Bill\" than to say \"Hi Jerry Smith, just wanted you to know we're working on your issue. Bill Stone\". That would be my preference.\u00a0 I'm interested to get feedback on what others think on this subject.\u00a0 If I'm using Canned Responses, I'm having to manually remove last names because it just doesn't sound right to me. Thanks for the feedback.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/How-do-you-prefer-to-refer-to-your-customers-in-JSM/td-p/2503925"
+    },
+    {
+        "title": "side menu option backlog didn't show on jira",
+        "user": "Alsalaampakistan",
+        "likes": "0",
+        "date": "10-11-2023",
+        "id": "2502274",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-unknown-hosting-type",
+            "jira-service-management",
+            "jira-service-management-unknown-hosting-type"
+        ],
+        "details": "Sir, all Tasks and bugs didn't transfer from alsalaamtechhouse@gmail.com to alsalaampakistan@gmail.com. please resolve my this issue as soon as possible",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/side-menu-option-backlog-didn-t-show-on-jira/td-p/2502274"
+    },
+    {
+        "title": "Free Jira Cloud App for Microsoft Teams with embed Customer portal website",
+        "user": "Leon Pavesic",
+        "likes": "2",
+        "date": "10-10-2023",
+        "id": "2501159",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hello,",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Free-Jira-Cloud-App-for-Microsoft-Teams-with-embed-Customer/td-p/2501159"
+    },
+    {
+        "title": "jira to power microsoft automation connect for new user onboarding process",
+        "user": "Praveen poojary",
+        "likes": "0",
+        "date": "10-03-2023",
+        "id": "2495252",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "can you please suggest this request? i am waiting for your response. i am done with the power automation for user creation, but I need to connect the Jira ticket to the power automation app. Also please let me know if is there any free tool in\u00a0 Jira for the user onboarding process.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/jira-to-power-microsoft-automation-connect-for-new-user/td-p/2495252"
+    },
+    {
+        "title": "is jira service management is good",
+        "user": "AlanPlayOficial",
+        "likes": "0",
+        "date": "10-02-2023",
+        "id": "2494029",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "is good real",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/is-jira-service-management-is-good/td-p/2494029"
+    },
+    {
+        "title": "A number for the ability to use the tool",
+        "user": "Wojciech Andryszek_Deviniti",
+        "likes": "0",
+        "date": "10-02-2023",
+        "id": "2493590",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi! The idea comes from stories about migrations to the cloud in which some companies working with JSM and other Atlassian products need help determining what the Atlassian environment is really about (including their relations with business processes). On a scale from 1 to 10, how much does a company need to know and understand its tools (e.g., JSM) to safely, or at least nearly trouble-free, base business activities on it? I hope it makes any sense.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/A-number-for-the-ability-to-use-the-tool/td-p/2493590"
+    },
+    {
+        "title": "Email in jira service mananagent",
+        "user": "Andrey Miranda Diaz",
+        "likes": "0",
+        "date": "09-26-2023",
+        "id": "2489153",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "Good\u00a0 afternoon , We\u00a0 are going to migrate our Jira sofware\u00a0 to Jira service management and we would like to know about the opcion with email that create a case\u00a0 . for example we have somes questions : Is it possible to have an answer template?  Can we have several aliases\u00a0 related to a single emailbox\u00a0 \u00a0with different issue types and different request types in each project? These questions are for the cloud version and the server version  Thanks regards",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Email-in-jira-service-mananagent/td-p/2489153"
+    },
+    {
+        "title": "Email notifications problems",
+        "user": "Giulio Platania",
+        "likes": "0",
+        "date": "09-26-2023",
+        "id": "2488534",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-server",
+            "jira-service-management",
+            "jira-service-management-server"
+        ],
+        "details": "Hello, recently, the notification emails received from Jira have a different preview than before. Specifically, instead of displaying the username of the notification sender, it always shows \" Noreply",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Email-notifications-problems/td-p/2488534"
+    },
+    {
+        "title": "Real-world examples of your Feature Request workflows?",
+        "user": "chris_green",
+        "likes": "3",
+        "date": "09-22-2023",
+        "id": "2486195",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Would anyone be willing to share resources/screenshots/notes/videos on workflows that you have in place starting with Feature request intake all the way through development and release? I really like how Atlassian solicits suggestions so users can vote and watch issues, as well as the ability for the end user to comment on the suggestions. We currently intake feature requests within Jira Service Management and they are then cloned to a separate Jira project in which they then go through a review process on a Feature Request board. Ideally, I'd like to do something similar, but also give transparency/access to see the feature requests by our end users. Any suggestions would be greatly appreciated!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Real-world-examples-of-your-Feature-Request-workflows/td-p/2486195"
+    },
+    {
+        "title": "Removing unlimited automation rule executions is a TERRIBLE change!",
+        "user": "Paul Krueger",
+        "likes": "7",
+        "date": "09-18-2023",
+        "id": "2480273",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "https://community.atlassian.com/t5/Automation-articles/Introducing-our-new-packaging-model-for-Jira-Cloud-Automation/ba-p/2446099 In today\u2019s model, an automation rule that is configured to run in a single Jira project does not count toward the usage limit. In the new model, all automation rule types (i.e. single project, project type, multi-project, and global rules) will count towards the usage limit. This is a complete deal-breaker for me! I've automated the hell out of Jira. The automation is what's allowed me to expand Jira from an IT-only tool out to multiple different business units across our company. Jira has been a huge success story for us since 2020, but this could change everything. This decision needs to be reevaluated.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Removing-unlimited-automation-rule-executions-is-a-TERRIBLE/td-p/2480273"
+    },
+    {
+        "title": "JBCF Message field can't be copy the message to text field",
+        "user": "jeoj",
+        "likes": "0",
+        "date": "09-17-2023",
+        "id": "2479691",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "custom-field",
+            "field",
+            "jira-service-management",
+            "jira-service-management-server",
+            "scripted-field",
+            "server"
+        ],
+        "details": "Hello everyone! Hope you all of you doing great!  I dealing with a problem and hope someone can help me  I used JBCF:Message field and I wrote a jQuery script for it and it totally worked fine! I wanted to copy the Message field output to a single-line text field But it's transformed! How can I copy it to text?  find the screenshot below",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/JBCF-Message-field-can-t-be-copy-the-message-to-text-field/td-p/2479691"
+    },
+    {
+        "title": "Client users should be able to see only client specific tickets in a project",
+        "user": "Katpro Systems",
+        "likes": "0",
+        "date": "09-14-2023",
+        "id": "2478239",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "We need to change that setting and ensure that only client tickets created by them, assigned to them or reported by them across any user from that client team only should be displayed to them.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Client-users-should-be-able-to-see-only-client-specific-tickets/td-p/2478239"
+    },
+    {
+        "title": "Using Jira/Confluence as a CRM.",
+        "user": "Adam Taylor",
+        "likes": "0",
+        "date": "09-14-2023",
+        "id": "2477772",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "atlassian-support",
+            "confluence",
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "questions-for-confluence"
+        ],
+        "details": "Has anyone had much success in setting up Jira/Confluence in order to store Customer (Organization) information such as: Contract Start/End dates Main Contact Name Email Telephone Products Purchased Etc I'm trying to see if we can stored this information in either Jira/Confluence (maybe both) and then set up alerts for our Sales team so that they can reach out to our customers and look to renew contracts, sell new products etc. I've found it hard to find anything like this online and a lot of people are pointing towards add-ons (which if i can, i would like to try and avoid)",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Using-Jira-Confluence-as-a-CRM/td-p/2477772"
+    },
+    {
+        "title": "Automate related tasks",
+        "user": "Viktoryia Urbanovich",
+        "likes": "0",
+        "date": "09-13-2023",
+        "id": "2476471",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-server",
+            "jira-service-management",
+            "jira-service-management-server"
+        ],
+        "details": "Hi all! 1. In my rule, I indicated that when the status of the main task changes, a related task is created in which the fields I specified in the rule are edited (to which they are copied). If you look at the history, then yes, the fields are copied, like the \u201cApprovers\u201d field I need, but the confirmation email is not sent to this user. It is necessary to add the user manually, which interferes with our automation... 2. When another task is created according to the same rule, the fields I specified are not automatically copied into it, although the rule log says that it is being processed and the task has been edited. 1 and 2 screenshots for the first question, 3 and 4 screenshots for the second question.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Automate-related-tasks/td-p/2476471"
+    },
+    {
+        "title": "Link to a specific related issue",
+        "user": "Viktoryia Urbanovich",
+        "likes": "0",
+        "date": "09-13-2023",
+        "id": "2476442",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management"
+        ],
+        "details": "Hi all!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Link-to-a-specific-related-issue/td-p/2476442"
+    },
+    {
+        "title": "Automatism copy message from ticket to other ticket linked with an action as trigger",
+        "user": "Mauro Barros",
+        "likes": "0",
+        "date": "09-12-2023",
+        "id": "2475091",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "comment",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hello to all of you. I am trying an automation from a ticket (SD) to a linked ticket (DEV). I think it could be a bug for this automatism, because if we don't wait for the tag change as in the first screenshot, every message is copied to the linked ticket, it works without problem. Has anyone tried this? Do you have any other idea? Thank you very much.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Automatism-copy-message-from-ticket-to-other-ticket-linked-with/td-p/2475091"
+    },
+    {
+        "title": "I've been added to multiple spam Jira Service Management projects, please help",
+        "user": "Ran Rubinstein",
+        "likes": "0",
+        "date": "09-12-2023",
+        "id": "2474713",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "atl-rvw",
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Someone's been creating a massive amount of fake jira service management accounts that emulate a crypto trading system and adding people. Please fix Jira to avoid using it for spam/scams! some examples: dtutqwv.atlassian.net 3ghoof4.atlassian.net 60gorck.atlassian.net",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/I-ve-been-added-to-multiple-spam-Jira-Service-Management/td-p/2474713"
+    },
+    {
+        "title": "How do you effectively manage a service desk with jira service management?",
+        "user": "Phillip C",
+        "likes": "1",
+        "date": "09-10-2023",
+        "id": "2473086",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "I've been using Jira Service Management for a while now and what I fail to still understand is how a service desk team can effectively be managed on the platform? I would like to know how other teams: Effectively manage time for agents: How are you able to manage the tickets for multiple agents working in a JSM project? Determine work spent on tickets: How are you measuring time taken and agents working on tickets? Overall issue management: How are you able to ensure tickets are worked on in a logical order? What automation do you find to be most valuable? simple to advanced automation rules. How do you monitor and improve performance? Reports and dashboards usage. I'm not looking for addon marketplace app sales people to bombard me with offerings, i'm looking for real world people providing info and evidence on how companies manage a service desk with JSM. Would love feedback on any or all of the questions above from real service desk users.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/How-do-you-effectively-manage-a-service-desk-with-jira-service/td-p/2473086"
+    },
+    {
+        "title": "\ud83d\udce3 EAP: Increased SLA goal capacity in projects",
+        "user": "Manas Shukla",
+        "likes": "3",
+        "date": "09-07-2023",
+        "id": "2470839",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "sla"
+        ],
+        "details": "I\u2019m Manas, Product Manager for SLAs in JSM. We\u2019re excited to announce that in the last few months, we\u2019ve been working on a solution to improve SLAs for customers that require more goals in their projects than what JSM currently allows. In this new feature, we are increasing the amount of time targets a single goal can handle by allowing you to group priorities under a single JQL clause. We expect this will greatly reduce your dependency on the overall goal limit without requiring any complex changes to your current SLA configuration  Read the article to know more: https://community.atlassian.com/t5/Jira-Service-Management-articles/Early-access-Program-Get-increased-SLA-goal-capacity-in-projects/ba-p/2471811 How to sign up for the EAP? We are limiting the EAP to only the first 15 customers that sign up! Step 1: You must be a org admin or site admin to be able to enroll in the EAP. Step 2: Sign up here: Step 2: We will reach out to you to enable the feature in your selected project. Rest assured that the feature will not disturb your existing SLAs. They will continue to work as expected.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/EAP-Increased-SLA-goal-capacity-in-projects/td-p/2470839"
+    },
+    {
+        "title": "How does your team work with Service Requests?",
+        "user": "Darryl St_ Pierre",
+        "likes": "0",
+        "date": "09-06-2023",
+        "id": "2470280",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "We have an existing service desk where all 8 members of the department are licensed as agents, but generally only 2 of them interact with requesters. The team is looking to rework their setup so that they can get very detailed reporting on the status of a request as well as track the time and work being spent. My approach is to have their existing service desk simply track the high level statuses, i.e. - In Progress, Waiting for Customer (or Support, or Vendor), and have a backend Software project for the specific state of the work, i.e. - Design, Review, Development, QA, UAT, Deployment. That presents me with two options: Create these specific Statuses for the backend project with a complex workflow (not all Statuses used for all requests), or break down the various steps into subtasks that reflect the status - a subtask for Design, another for Review, etc. I know in either case I can link the backend task (or task and subtasks) to the front end ticket. What I don't know, because I am light on Report/Filter/Dashboard knowledge, is how difficult either of these options will be to report on. And finally, is my approach wrong? Should I instead be highly customizing the service desk to track all the specifics? To me that seems counter-intuitive and a lot of work, but most of what I know about Jira design is from necessity and what my org wants, and not necessarily the best way to do things. I honestly would welcome any and all feedback. I'm sure there are many different ways people are handling similar situations, and I'm trying to get a sense for what has worked best for others.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/How-does-your-team-work-with-Service-Requests/td-p/2470280"
+    },
+    {
+        "title": "Best practice to manage users of Jira Service Management and Jira Software",
+        "user": "Ingo Wenke",
+        "likes": "0",
+        "date": "09-06-2023",
+        "id": "2470004",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi all,  this topic ist about best practices, experiences and pitfalls while managing your users and customers of Jira service Management and Jira Software. While we have had a clear guideline how to manage our users and customers for years, we review this because of the introduction of the \"Customer service management (early access)\" feature within JSM an couple of weeks ago. Some definitions upfront User = Account granted a user role in Jira Software Customer = Account granted customer role in Jira Service Management Service Agent = Account granted Service Agent role in Jira Service Management all combinations of the above roles are possible Jira user group = a group of accounts, defined within Administration as a group  Current state We are an organization with multiple companies and have following access management: Jira user group company[A-Z].employees All employees are member of their specific Jira user group We have granted the group the Customer role for JSM The User group is added to out internal IT Helpdesk via \"people\"  During an onboarding of a new employee, we add an Atlassian Account with his mail and add this account to the specific Jira user group company[A-Z].employees. The user receives the invitation from Atlassian to complete his registration and he can use the internal IT Helpdesk. We do not use the customer invitation from JSM. Why? we have following lessons learned: Adding a customer via Service Management invitation, Cretes a \"customer only\" account. This Account is managed in a different way opposed to all \"normal\" Jira user accounts. Doing so, we had some struggle, when the user was upgraded to a Jira User. We had one Account in the Service Management Customer Section and one Account in the \"real\" user administration. Due to compliance and clean-up management this was a pain. That's why we decided this way. While we manage users this way, we don't use JSM \"organizations\". A Jira user group can't be assigned to a JSM organizations. So, we have no organizational view of the ticket situation from the organization view. But this is not an issue, because the it was low value due to separation of unresolved of resolved issues and no quick view. New State with \"Customer service management\" The new feature delivers some great new views to our service agents. As a service agent, it's now possible to see resolved and unresolved issues in a quick overview. And all in one search result. Same for organization. And the option to add custom field to customers and organization. We don't use this feature by now, still in the think tank how to use and maybe how to integrate with other systems. We gave the new organization view a try and added mail-addresses of employees of a specific company to the JSM organization. As a result, we have a quick view of what's going on within the specific company. This is pretty cool. Adding Jira user groups does not work. The Issue When we want to use the new organization view of the new Customer service management feature, we have to manage two lists of users (the Jira user group and the organization in JSM). Or re-arrange our current onboarding and account management for Applications and the IT-Helpdesk.  The Question What is your best-practice approach about User and Customer management and experience with the new \"Customer service management\" feature?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Best-practice-to-manage-users-of-Jira-Service-Management-and/td-p/2470004"
+    },
+    {
+        "title": "Forms not displaying with JDK 17 and Proforma",
+        "user": "Ryan Goodwin",
+        "likes": "0",
+        "date": "08-31-2023",
+        "id": "2465732",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "Sharing experience where proforma forms stop displaying properly after unknown amount of time with JSM 5.10.1 and JS 9.10.1 while deployed on Oracle openjdk 17.x.  https://jira.atlassian.com/browse/FORMDC-759  Running in a 3 node DC cluster, nodes will eventually stop displaying forms, while other nodes in the cluster continue to function properly. However, we've experienced that each node will eventually fall victim to this issue. Deploying a new node resolves the issue for some time, maybe 2-4 hours. Will post back after deployment updated to utilize Adopt openjdk 11.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Forms-not-displaying-with-JDK-17-and-Proforma/td-p/2465732"
+    },
+    {
+        "title": "Removing the 'None' option from select fields",
+        "user": "David Harkins",
+        "likes": "1",
+        "date": "08-31-2023",
+        "id": "2465668",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "behaviours",
+            "custom-field",
+            "jira-service-management",
+            "jira-service-management-server",
+            "scriptrunner",
+            "server"
+        ],
+        "details": "I had a requirement to remove the None option from several fields, to increase screen estate and make the display screens more graceful. Quite a few answers out there which also match the same mechanism being used here, ScriptRunner Behaviours.\u00a0 However most answers I found required the script author to explicitly list the values that should be displayed.\u00a0 While this does achieve the same end goal it is getting all options excluding none, not actually removing none. What happens if me or a future system admin adds additional options to the fields, they will not show and the behaviours will have to hunted down, modified, and tested.\u00a0 Additionally, if we wanted to do this with multiple fields, the script can become lengthy and prone to human typos.\u00a0 We've all done it. My solution has started as a simple behaviour script to remove 'none' from three fields with less lines of scripts and will not require modification when new options are added. The current script is: import com.atlassian.jira.component.ComponentAccessor import com.atlassian.jira.issue.customfields.manager.OptionsManager hideNone( \"Field 1\" ) hideNone( \"Field 2\" ) hideNone( \"Field 3\" ) def hideNone ( String FieldName ){  def optionsManager = ComponentAccessor .getComponent( OptionsManager )  def field = getFieldByName( FieldName ) field.setAllowInlineEdit( true )  def fieldId = customFieldManager.getCustomFieldObject(field.getFieldId())  def fieldConfig = fieldId.getRelevantConfig(getIssueContext())  def fieldOptionsOriginal = optionsManager.getOptions(fieldConfig)  def fieldOptionsCustYes = fieldOptionsOriginal.findAll { it.value !in [ \"none\" ] } field.setFieldOptions( fieldOptionsCustYes ) } The next step will be to create a helper class script so that the same hideNone method can be used on multiple behaviour scripts whenever it is needed, without having to duplicate the same lines of code. Just wanted to share and help others :-)",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Removing-the-None-option-from-select-fields/td-p/2465668"
+    },
+    {
+        "title": "Jira + ChatGPT: How to Automatically Triage Jira Tickets with Artificial Intelligence",
+        "user": "Felipe Lucena",
+        "likes": "8",
+        "date": "08-31-2023",
+        "id": "2465589",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "atlassian-marketplace",
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "jira-software-cloud"
+        ],
+        "details": "Artificial intelligence is becoming more prevalent in our daily lives, with OpenAI's ChatGPT being one of the standout examples. Since its launch, I have dedicated a significant amount of time to studying it. As I am a Jira administrator, I decided to integrate ChatGPT with Jira Service to automate ticket triage with OpenAI's artificial intelligence. In this article, even if you're not a developer, you will learn: Why delegate triage to an AI Requirements for Automatic Ticket Triage Prompt to triage and analyze sentiment in Jira How You Can Integrate Jira Service with ChatGPT (Step by Step) Costs and Savings Generated Future of AI ticket triage And if you still have questions by the end, you can reach out to me directly to continue the conversation. \ud83e\udd14 Why delegate triage to an AI?  Triaging tickets manually can be a time-consuming and error-prone task, and by delegating this function to an AI, companies can benefit in several ways: Accuracy: Efficiency: Workload Reduction: In the image below, you can see ChatGPT filling in the Sentiment, Service, and Sentiment Reason fields automatically:   \ud83d\udccb Requirements for Automatic Ticket Triage with\u00a0ChatGPT  During the configuration of the ChatGPT integration, I specified that the AI must complete the following fields: Sentiment [Select Field]: Service [Select Field]: Sentiment Reason [Paragraph Field]:  \ud83d\udcca\u00a0Hey, can you imagine how many reports you can do with this here?* \ud83d\ude09  \ud83d\udcac\u00a0Prompt to triage sentiment analysis of Jira tickets Now that we know what the requirements are for our automatic ticket triage, it's time to create a prompt in ChatGPT that answers all these questions. For this purpose, we will use the prompt below:  The prompt above is clear about its purpose, but I've highlighted three important sections of the image above. Are they: I put all available options in the Service field of my Jira project to ensure that ChatGPT always selects a valid option in Jira. I requested that the result be returned in JSON format to save with requests for queries in the ChatGPT API. I made it clear that ChatGPT must consider the ticket description that is between the <description></description> delimiters.  When running a real case directly in the ChatGPT console, I get a response like the one below:  \u2705 You can see this prompt in the GitHub repository at this link: https://bit.ly/ticket-triage-prompt-in-jira   \ud83e\udd16 What do you need to do the integration? Integrating Jira Service with ChatGPT can seem complex at first glance, but with the right steps, the process is simplified. All you need is: A token to access the OpenAI API (ChatGPT): link An app that allows you to connect to the OpenAI API: Jira Misc Workflows Extensions (JMWE) Appfire Creating a token to access the ChatGPT API The first thing you need to connect with the OpenAI API is an authentication token, and you can do that by following the steps below: Go to OpenAI's official website: https://openai.com/ Create if you don't already have one Then, authenticate with your username on the Platform View API Keys: \u2139\ufe0f Note: It is worth noting that using the ChatGPT API has associated costs. When creating an API key, you will likely be taken to a payment page to enter your credit card information. OpenAI offers a $5 bonus for new users to try out the API as an incentive.  Configuring Jira Misc Workflow Extensions in JMWE Jira Misc Workflow Extensions Jira's integration with OpenAI (ChatGPT) was done by JMWE through the architecture below:  Below you can see a step-by-step on how to perform the integration described above: Step 1: Create an Entity Property to store the ChatGPT response You can do this by following the steps below: Create a post function of type \u201c Set Entity Property value\u201d. Then, fill in the \u201cProperty Name\u201d field with the value \u201ctriage_info\u201d (or any other name you prefer). In the \u201cValue\u201d field, insert this script Scroll down to the \u201cOptions\u201d section, check the parameter \u201c Treat value as JSON Click Save When this post-function is ready, and you place it in a transition in your project's Workflow, Jira will generate an Issue Property like the image below whenever the transition is executed:  This Entity Property is a JSON with all the information we need to fill in the Sentiment, Service (Category), and Sentiment Reason fields. \ud83d\ude09 Step 2: Create a post-function to update Jira fields Create a post function like \u201c Set issue fields (JMWE app)\u201d. Select the Sentiment field. In the Value field, enter this script After completing the steps above, and these post-functions are correctly configured in your Jira Workflow transitions, the tickets will be automatically sorted as in the image below:  The Cost of Automation with ChatGPT \ud83d\ude80 Good news for managers and executives! $0.0005515 per ticket See the table below for how much the monthly amount would be to automatically sort Jira tickets through ChatGPT:  I ncredible, isn't it?  But how did I arrive at this value? Let's dive into the details. Tokens: The AI Currency The ChatGPT API charges based on the number of tokens processed. Tokens can be words, characters and even symbols, varying by language. While we can estimate the number of tokens that text might consume, determining the exact number of tokens used by the ChatGPT API to process and respond to a specific prompt involves complex variables and cannot be predicted with absolute precision. Understanding Token Calculation Calculating tokens in ChatGPT may seem complex at first glance, but we can simplify it for practical purposes. While there are a lot of technicalities behind this calculation, I'll present a simplified approach using just two variables: Number of Words Language Factor The simplified formula for estimating the amount of tokens is: Estimated Number of Tokens The following table illustrates an estimate of tokens for a text of 100 words in three different languages: English, French and Portuguese. Using the formula above, we can get a rough idea of how many tokens are needed for each language: \u2139\ufe0f Note: Keep in mind that this is a simplified approach and the actual number of tokens may vary based on many factors, including the complexity of the text and the response generated. And how much does each Token cost? As of the date of publication of this article, the prices charged by OpenAI for processing messages sent to its API are: With GPT-3.5 Turbo model and 4K context: $0.0015 for 1K tokens $0.002 for 1K tokens With GPT-3.5 Turbo model and 16K context: $0.003 per 1K tokens $0.004 per 1K tokens To illustrate: if you send a prompt of 200 tokens and receive a response of 800 tokens with the 4K model, the cost is 1000 tokens. This translates to: (200 tokens * $0.0015) + (800 tokens * $0.002). Estimates Based on Actual Data To determine how many tokens the ChatGPT API might need when processing messages, I analyzed several databases in Jira Service Management. The objective was to identify the average number of words per ticket, considering different types of projects. The following table shows the average number of words in both the original ticket (input) and the response generated by ChatGPT:  Based on the average number of words per project type, we can calculate the estimated amount of tokens that the ChatGPT API will need to process the messages. The formula for this estimate is: Tokens (Input) = ([Number of Base Prompt Words \u2139\ufe0f Note: link Tokens (Response) = [Number of Words in ChatGPT response] * [Language Factor]  For example, for a Servide Desk IT project in English, it would be: Tokens (Input) = (153 words + 37 words) x 1.5 =~ 285 tokens Tokens (Answer) = 41 x 1.5 =~ 62 tokens  Now, with the total number of tokens for input and response, we can calculate the cost using OpenAI pricing for ChatGPT 3.5 Turbo: Entry Price (input) = Entry Tokens / 1000 x $0.0015 Response Price (output) = Response Tokens / 1000 x $0.002  Total cost Entry = 285 tokens x $0.0015/1000 = $0.0004275 Answer = 62 tokens x $0.002/1000 = $0.000124 Total = $0.0004275 + $0.000124 = $0.0005515  Conclusion: Based on this estimate, the cost to triage a ticket in an IT Service Desk environment using English is just $0.0005515 per ticket. I'd like to emphasize that this is an estimate based on data I've collected from the instances I manage and conversations with other Jira admins. Each environment has its own specificities and characteristics. Additionally, OpenAI's pricing policies may change from time to time. The purpose of this section of this article is to provide an overview on costs. I strongly recommend conducting specific studies in your Jira environment before any implementation to determine the monthly cost. Also, please visit the OpenAI  \ud83d\udd2e\u00a0The future of ticket triage with AI Integrating tools like ChatGPT into Jira has already demonstrated the transformative power of artificial intelligence in ticket management. While AI currently assists in sentiment sorting and analysis, the potential for future optimizations is immense. The continuous evolution of technology suggests that soon we will have even more integrated solutions, making support processes more agile and accurate. In a world where efficiency is crucial, combining Jira and AI promises to be a milestone in the customer service revolution.  \ud83d\udce2 Let's Talk! I look forward to hearing your experiences! If you've already implemented automation with ChatGPT in your company or have unique insights into your Jira environment, please share them with me in the comments. Your vision can open new horizons and inspire others to follow this innovative path. Tell me your story, and let's exchange ideas and experiences! \ud83d\ude80\ud83d\udc65 Also, I invite you to follow me on LinkedIn",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Jira-ChatGPT-How-to-Automatically-Triage-Jira-Tickets-with/td-p/2465589"
+    },
+    {
+        "title": "Lansweeper App for Jira Service Management Assets",
+        "user": "Martin Meduna",
+        "likes": "1",
+        "date": "08-31-2023",
+        "id": "2465355",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "integration",
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "We as Lansweeper recently published an integration application for Jira Assets Lansweeper App for Jira Service Management Assets We have found an issue, we have identified the root cause, we are currently working on a fix, and we will publish the new version of the application in\u00a0 Atlassian store as soon as possible. Please note that not all customers are effected by this issue, if your integration run fails, you will see in the error in the log: \u201cError occurred in get assets resolver. Reason:\u00a0 The maximum payload size is 200KB.\u201d Thanks for your patience as we resolve this.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Lansweeper-App-for-Jira-Service-Management-Assets/td-p/2465355"
+    },
+    {
+        "title": "Why does Atlassian remove topics about phishing?",
+        "user": "nah",
+        "likes": "0",
+        "date": "08-30-2023",
+        "id": "2464935",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "I started a discussion on Atlassian's Jira platform being used for phishing attacks, but the post was taken down. Why?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Why-does-Atlassian-remove-topics-about-phishing/td-p/2464935"
+    },
+    {
+        "title": "So Atlassian is cool with their platform being used for phishing attacks?",
+        "user": "nah",
+        "likes": "0",
+        "date": "08-30-2023",
+        "id": "2464928",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "I mean, it seems to be an ongoing thing. Jira Service emails going out, no idea who their from, my Trello account data being used to populate a new account under someone else's project, no control or ability to approve that action, I mean, what could possibly go wrong?!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/So-Atlassian-is-cool-with-their-platform-being-used-for-phishing/td-p/2464928"
+    },
+    {
+        "title": "Abuse report",
+        "user": "Alexis Hern\u00e1ndez",
+        "likes": "0",
+        "date": "08-30-2023",
+        "id": "2464490",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "What can I do to stop this kind of mail? I've already sent this to abuse@atlassian.com but nothing happened.   Please someone help it's really annoying.  Thanks!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Abuse-report/td-p/2464490"
+    },
+    {
+        "title": "HR",
+        "user": "ayala bachrach",
+        "likes": "0",
+        "date": "08-30-2023",
+        "id": "2464066",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "how can I create and modify an HR employee board? how many use Jira as an HR employee performance management?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/HR/td-p/2464066"
+    },
+    {
+        "title": "Bots abusing Atlassian platform",
+        "user": "Yorben",
+        "likes": "0",
+        "date": "08-29-2023",
+        "id": "2462954",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "unknown-hosting-type"
+        ],
+        "details": "Hey,  I get emails from bots daily and these are starting to irritate me. They keep on inviting me to different Services and this is driving me crazy. I accepted the invite once, now I can't even leave this group. This group keeps creating posts with links to viruses and malisious websites, you get email notifications of this too. Please tell me there is an option to stop getting invites or how that I can leave this group. Otherwise I will be forced to delete my Jira account and will have to block your entire platform. Finally, this can't have a good impact on your reputation, can it?  Kind regards,",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Bots-abusing-Atlassian-platform/td-p/2462954"
+    },
+    {
+        "title": "Spammer Keep invite me and other to this project and this site doesn't have tool to help",
+        "user": "Nic Brough -Adaptavist-",
+        "likes": "0",
+        "date": "08-26-2023",
+        "id": "2460796",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "unknown-hosting-type"
+        ],
+        "details": "I have person information on this account I can't make private so they can get my name and email address I have already had an attempt against my microsoft login I can block these groups of people  It seem that if I want to have a bitbucket account or a trello account I am stuck with this piece of shit spammer accessible atlassian shit I delete all their shit spam tickets whenever I sign on, and I have disable email notif, but I was really hoping for a better way to protect against this shit",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Spammer-Keep-invite-me-and-other-to-this-project-and-this-site/td-p/2460796"
+    },
+    {
+        "title": "what do approvers not approved ticket as per SLA ,",
+        "user": "Sunoop Puthur",
+        "likes": "0",
+        "date": "08-24-2023",
+        "id": "2458784",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Some approvers are taking a long time to approve. IT service desk agents can manage this situation,\u00a0because\u00a0there delays\u00a0response\u00a0will affect\u00a0ticker SLA",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/what-do-approvers-not-approved-ticket-as-per-SLA/td-p/2458784"
+    },
+    {
+        "title": "Do I have a job?",
+        "user": "evelynserviceannouncement",
+        "likes": "0",
+        "date": "08-24-2023",
+        "id": "2458664",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "atl-rvw"
+        ],
+        "details": "First I want to apologize for even asking about this because I should be able to tell of I'm being scammed or not. But, I've been getting emails from am.norply.Atlassian.com-( something to that effect) asking me to join group. Because I have been mass applying for employment and I don't know how Atlassian does their hiring or programs, I haven't a clue as to what's going on. If this is legit, I would love to work for the company. It's a great company. I can't respond back to ask about anything because it is norply. Is there a phone number I can call to find out what is happening or am I just retarded and can't tell if I'm being scammed ? Can someone please give me a heads up on this? Evelyn",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Do-I-have-a-job/td-p/2458664"
+    },
+    {
+        "title": "How can we give rights to customer to add more customers with the project permission restricted",
+        "user": "Muhammad Moazzam Hassan",
+        "likes": "0",
+        "date": "08-23-2023",
+        "id": "2457160",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hey All, Create a Label Field and name it as \"Add New Customers\" and add to the dedicated Request Type to whom you want the customer to add more customers. Create an Automation Rule. Trigger Event ( Issue Created ) Create a branch ( Advance Branching ). Copy the Lable Field id e,g {{issue.customfield_10192}} Give the variable name of your choice e.g \" newCustomer Go to action and select Add Service Project customer. Use the variable in Email and Name {{newCustomer}} Additional Step if you want to add users as Request Participants, Add action and find the Re-fetch issue data. Add action of Edit Issue, find the Request participant field and use the same variable {{newCustomer}}. The 7th-8th Step is to add the user to request a participant. Please suggest if it is a feasible solution or how can we improve more.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/How-can-we-give-rights-to-customer-to-add-more-customers-with/td-p/2457160"
+    },
+    {
+        "title": "Send automated messages to costumers in different languages",
+        "user": "Patricia Nora",
+        "likes": "0",
+        "date": "08-22-2023",
+        "id": "2456175",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hello, I'd like to share my case to see if we can find the best solution. We have 3 different types of service requests in our Service Desk Portal. Depending on which request is sent, a different automated message is sent to the customer. The way we are currently doing it is with an automation that adds a public comment to the ticket, which is then sent by email to the costumer. Depending on the type of request, it adds a different text. It works fine, it gets the job done, but only in one language (Spanish). We are currently preparing the portal to add another language (English) and we are facing the problem that, even if everything is in English, the automated responses will still be sent in Spanish. How could we send this messages in different languages? The easier solution would be having the texts in both Spanish and English, but if there was a way, we would prefer to have the texts in the same language as the request. Thank you!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Send-automated-messages-to-costumers-in-different-languages/td-p/2456175"
+    },
+    {
+        "title": "JSM project connected to a Jira Software project?",
+        "user": "Darryl St_ Pierre",
+        "likes": "0",
+        "date": "08-21-2023",
+        "id": "2455662",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "I'm trying to link a company-managed service desk project to a backend software (or service desk) project (preferably team-managed). I ran across this discussion: Connecting a Service Desk to a Classic Software JIRA project but it doesn't address a significant need we have - collecting data that would be mapped to the backend project for reporting. Our use case: We have a department, currently hosting a service desk, that wants significant custom field additions and complex workflows. My thought was to setup the backend project as team-managed so that there are few to no global system changes required. The SD agent would maintain all communications with the requester via the original ticket, but all the work would be managed in the backend. We would collect all the necessary information up front through the use of a form. The problem is that only the standard fields in the front end project can be mapped (to my knowledge). The custom fields that only exist in the backend would not be visible to map. Is there functionality or an app that I'm missing that could accomplish what I'm trying to do?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/JSM-project-connected-to-a-Jira-Software-project/td-p/2455662"
+    },
+    {
+        "title": "Issue in attachment when sending from ServiceNow through Rest API",
+        "user": "Mohammed Haneefa Farook",
+        "likes": "0",
+        "date": "08-21-2023",
+        "id": "2455121",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "The original attachment is not getting posted from Jira instead binary attachment is posted. I have used rest APIto send attachment by defining content type and boundary as required for Jira.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Issue-in-attachment-when-sending-from-ServiceNow-through-Rest/td-p/2455121"
+    },
+    {
+        "title": "Spam Invite Bombs?",
+        "user": "Jeremy Tan",
+        "likes": "1",
+        "date": "08-20-2023",
+        "id": "2454635",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "jira-work-management",
+            "spam"
+        ],
+        "details": "I have been getting so many invite email bombs for the last 1 day... It's still going on... I am still being invited non stop. Is there anyway to top this madness or is the only way to delete my account? Why is there no preventive measures for this?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Spam-Invite-Bombs/td-p/2454635"
+    },
+    {
+        "title": "Priorities in Jira SM",
+        "user": "Vineela AK",
+        "likes": "0",
+        "date": "08-16-2023",
+        "id": "2452271",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi there,  I have changed the priorities to P1-P5 instead of critical, medium, low. I am able to see Highest, high, medium, low priorities in the service\u00a0 project report gadget when \" Incidents by priority\" report is selected. Not sure what is missing here. Appreciate if someone helps me here.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Priorities-in-Jira-SM/td-p/2452271"
+    },
+    {
+        "title": "Portal Groups",
+        "user": "Murad Jamal",
+        "likes": "0",
+        "date": "08-16-2023",
+        "id": "2451721",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi team, We have multiple portal groups within one project. Project name: ITSD Multiple Portal Groups: 1) Infra and Cloud Ops and then different forms 2) Cyber Security and then select different forms 3) IT Support Ops and then select different forms. However in 3, is there any way where we can create sub portal groups and categorize the forms by different names. Please assist.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Portal-Groups/td-p/2451721"
+    },
+    {
+        "title": "Smart value",
+        "user": "CK",
+        "likes": "0",
+        "date": "08-15-2023",
+        "id": "2450860",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "I am trying to generate an automation email that able to collect the data from the fields in the form that has been submitted. Can anyone please help or guide me ?",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Smart-value/td-p/2450860"
+    },
+    {
+        "title": "Outlook Desktop defaults customer notifications",
+        "user": "Amanda Morris",
+        "likes": "0",
+        "date": "08-14-2023",
+        "id": "2449439",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "We have custom styling on our customer notifications. Outlook desktop seems to default it to the generic. Does anyone know the reason for this? Is it because it is coming from an external email. I've tried to verify the atlassian email and it still defaults it.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Outlook-Desktop-defaults-customer-notifications/td-p/2449439"
+    },
+    {
+        "title": "How can I validate an invitation?",
+        "user": "Douglas Tirpak",
+        "likes": "0",
+        "date": "08-13-2023",
+        "id": "2448374",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "unknown-hosting-type"
+        ],
+        "details": "I've received a few emails with invitations to your service management is there a way to validate them because I have been applying all over and I would hate to miss the opportunity.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/How-can-I-validate-an-invitation/td-p/2448374"
+    },
+    {
+        "title": "Send -Pre notification",
+        "user": "Tara Irina",
+        "likes": "0",
+        "date": "08-11-2023",
+        "id": "2447294",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hello, Does anyone know what Send -Pre notification mean in the Notification scheme? What does it do? ow can it help? Tnx a lot",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Send-Pre-notification/td-p/2447294"
+    },
+    {
+        "title": "Project Management Tool with Recurring Tasks",
+        "user": "Marya Mercado",
+        "likes": "0",
+        "date": "08-10-2023",
+        "id": "2446832",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "My team has a meeting with IT to review our project needs so that they can determine the most appropriate resource. I believe the options in consideration are either Smart Checklist, a Kanban board, or a Scrum board. They've given the heads up that the need isn't complex enough for a Scrum board but haven't shared any additional information. I've done some Googling (which is how my team typically figures out how things work in Confluence) and am hoping for some community feedback on what to read up on before the call. Our team is tasked with managing the process of requesting, receiving, and distributing\u00a0 many different types of vendor generated documents and reports. We need a tool that supports recurring tasks (annual, monthly, etc.), subtasks, workflow w/ multiple owners (step is completed, next step is assigned), status, record of changes/challenges/notes on progress and has the ability to generate analytical reporting. If Jira isn't the right solution, we'll be pushed to AdaptiveWork (Clarizen). Thank you in advance for your input, we appreciate it!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Project-Management-Tool-with-Recurring-Tasks/td-p/2446832"
+    },
+    {
+        "title": "Default Satisfaction Report",
+        "user": "Tara Irina",
+        "likes": "0",
+        "date": "08-10-2023",
+        "id": "2446358",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi, where/how can I find the Default Satisfaction Report for my project? Can I export it? Thnak you!",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Default-Satisfaction-Report/td-p/2446358"
+    },
+    {
+        "title": "Feature Request for Enhanced Attribute Inheritance and Visibility in Assets",
+        "user": "Gonchik Tsymzhitov",
+        "likes": "6",
+        "date": "08-08-2023",
+        "id": "2443729",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "assets",
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "I hope this message finds you well. I wanted to propose a new feature that could greatly improve the usability and management of assets within our development environment, particularly when dealing with virtual machines that are part of various configurations or services. Feature Description Use Case Benefits:   Enhanced Management  Clear Ownership  Improved Collaboration  Efficient Troubleshooting We believe that this feature aligns well with our commitment to providing a robust and user-friendly development environment. If feasible, we kindly request your consideration in prioritizing the development and implementation of this attribute inheritance and visibility feature. Thank you for your time and consideration. We look forward to the opportunity to discuss this suggestion further and collaborate on its potential implementation.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Feature-Request-for-Enhanced-Attribute-Inheritance-and/td-p/2443729"
+    },
+    {
+        "title": "Exploring the Search for Add-Ons: How Do You Find the Right Solutions for Jira?",
+        "user": "Tomasz Po\u015bpiech",
+        "likes": "1",
+        "date": "08-07-2023",
+        "id": "2442643",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "atlassian-marketplace",
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hello Everyone in the Atlassian Community! Recently, I have noticed that many of us are looking for various add-ons for Jira to facilitate and streamline our work. Naturally, this need arises from both grassroots initiatives, where our colleagues come up with ideas and requests for improvements, and top-down initiatives, where management aims to introduce savings or other solutions to support work. Undoubtedly, different people implement these add-ons in various ways, with different goals and methods. However, what really intrigues me is how you, members of this community, make decisions about choosing add-ons and solutions. So, I would like to ask you directly: What are your methods for searching for add-ons for Jira? What criteria do you use when choosing solutions? Your experiences and opinions are very valuable to me, as they may help in a better understanding of how we can all work together to enhance our processes. I eagerly await your responses and am open to collaboration and discussion!  Thank you and best regards, Tomasz Po\u015bpiech",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Exploring-the-Search-for-Add-Ons-How-Do-You-Find-the-Right/td-p/2442643"
+    },
+    {
+        "title": "\ud83d\udea9 Changes to request type names break JQL queries and related SLAs, Filters, and Automations",
+        "user": "Esteban Diaz",
+        "likes": "1",
+        "date": "08-04-2023",
+        "id": "2441397",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "automation",
+            "cloud",
+            "filter",
+            "jira-service-desk-cloud",
+            "jira-service-desk-server",
+            "jira-service-management",
+            "jira-service-management-cloud",
+            "jql",
+            "sla"
+        ],
+        "details": "Problem: If you change the Request Type this will break JQLs queries Filters, SLAs Automations To solve this problem, I found that we can use Request Types IDs JQL queries \ud83d\udea8 Spoiler Alert: We will need to search and find those Request Types IDs. Solution: Search for an existing issue with the request type you are looking for and get the Issue Key ITSM-8 In your browser use your-jira-instance-url Issue Key https://mytestsite.atlassian.net/rest/api/3/issue/ITSM-8 As a result, you will get something like this: Issue ID Issue ID 10093 Using this Issue ID your-jira-instance-url Issue ID https://mytestsite.atlassian.net/rest/servicedesk/1/servicedesk/request/10093/request-types You will get a JSON like this one as result: Copy and paste this JSON on a parser like this one: http://json.parser.online.fr/ Over the result look for the Request Type name portalkey key Using the obtained values: portalKey key \u201cRequest Type\u201d = portalkey key \u2757 Importan key JQL Automations filters SLAs  SLA example: Automation example: Filter example: I hope this has been useful to you. Cheers! Esteban Diaz https://www.linkedin.com/in/estebandiaz/",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Changes-to-request-type-names-break-JQL-queries-and-related-SLAs/td-p/2441397"
+    },
+    {
+        "title": "In service desk projects we have to use only servicedeskapi to get updates using rest api",
+        "user": "Vishnu babu",
+        "likes": "0",
+        "date": "08-02-2023",
+        "id": "2438627",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-desk-cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi Team, https://your_domain.atlassian.net/rest/servicedeskapi/request Now, the issue is I want the Request which are having updates in a last one hour using rest api.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/In-service-desk-projects-we-have-to-use-only-servicedeskapi-to/td-p/2438627"
+    },
+    {
+        "title": "custom field filter issue scope (AQL), dot notation doesn't work",
+        "user": "G_ De Fazio",
+        "likes": "0",
+        "date": "08-02-2023",
+        "id": "2438281",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "cloud",
+            "jira-service-management",
+            "jira-service-management-cloud"
+        ],
+        "details": "Hi, for customer portal configuration I'm creating 2 different asset type (Contatti and Edificio), the first asset reppresent people and the second one the building. For the Contatti custom field I have no problem and I created it with the custom field 10103; Problems spawn when I try to filter Edificio (custom field 10146) with the attribute Azienda of Contatti object. What I want to do is filter buildings based on people's company using the dot notation but I have some problems:   Azienda (Company) is a field in both classes but for some strange reason the dot notation in the filter is wrong. The question is: there is any OQL validator to test my query and understand where I'm wrong?  Thanks, Giuseppe.",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/custom-field-filter-issue-scope-AQL-dot-notation-doesn-t-work/td-p/2438281"
+    },
+    {
+        "title": "Single sign on failed - OIDC",
+        "user": "TRDTOYGP",
+        "likes": "0",
+        "date": "08-02-2023",
+        "id": "2438062",
+        "category": "Discussions",
+        "deployment_type": "",
+        "product_plan": "",
+        "tags": [
+            "jira-service-management",
+            "jira-service-management-server",
+            "server"
+        ],
+        "details": "Hi Team Our secret for this OIDC service had expired and a new one was created, but we will still getting the same error message even after updating the secret key under Authentication methods. 1 - udpated secret to new secret reeived from azure system 2 - Updated the issuer URL to https://login.microsoftonline.com/710b1675-b870-4652-b453-d417a82a0b6f/oauth2/token https://login.microsoftonline.com/710b1675-b870-4652-b453-d417a82a0b6f/oauth2/v2.0/authorize https://login.microsoftonline.com/710b1675-b870-4652-b453-d417a82a0b6f/oauth2/v2.0/token https://login.microsoftonline.com/710b1675-b870-4652-b453-d417a82a0b6f/oauth2/v2.0/userinfo [KSSO-I54BMS31JV] Failed OIDC resume login: [OIDC-95FRPX2LAY] Failed parsing JSON returned from OIDC POST request: [OIDC-K6JCV4L81E] Failed performing OIDC POST request: Expected HTTP 200 OK. Actual response was HTTP 401 UNAUTHORIZED Please check that your client_secret is correct., requested url: https://login.microsoftonline.com/710b1675-b870-4652-b453-d417a82a0b6f/oauth2/v2.0/token",
+        "source_url": "https://community.atlassian.com/t5/Jira-Service-Management/Single-sign-on-failed-OIDC/td-p/2438062"
+    }
+]
