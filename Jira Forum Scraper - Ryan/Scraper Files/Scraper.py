@@ -9,18 +9,18 @@ from art import *
 art = text2art("Jira Forum Scraper", font="small")
 print(art)
 
-# Select the Type of Scraping
-print("Please Select Type of Scraping:\n\n1-) Questions\n2-) Discussions\n")
-scraping_type = input("Please Select Type of Scraping: ")
-
-if scraping_type == "1":
-    file_name_slug = "questions"
-else:
-    file_name_slug = "discussions"
-
-
 # Add the No of Days as you want
 no_of_days = int(input("Please Enter No of Days: "))
+
+
+def create_date_string():
+    start_date = datetime.now()
+    end_date = start_date - timedelta(days=no_of_days)
+
+    return f"{end_date.strftime('%m%d%y')}_{start_date.strftime('%m%d%y')}"
+
+
+file_name_slug = f"jira_forum_{create_date_string()}"
 
 
 def get_recent_date(day_of_week):
@@ -152,66 +152,79 @@ page_no = 1
 keep_running = True
 all_articles_data = []
 
-while keep_running:
+for scraping_type in ["1", "2"]:
+
     if scraping_type == "1":
-        page_url = f"https://community.atlassian.com/t5/Jira-Service-Management/qa-p/jira-service-desk-questions/page/{page_no}?sort=recent"
+        scraping_section = "questions"
     else:
-        page_url = f"https://community.atlassian.com/t5/Jira-Service-Management/bd-p/jira-service-desk-discussions/page/{page_no}?sort=recent"
+        scraping_section = "discussions"
 
-    response = requests.get(page_url)
+    print(f"{scraping_section.title()} Start Scraping")
 
-    if response.status_code != 200:
-        print(f"Failed to fetch the page. Status code: {response.status_code}")
-        break
-
-    page_source = str(response.text)
-
-    # total number of sections
-    no_of_articles = len(String(xpath='//li[@class="atl-post-list__tile"]').parse_html(page_source))
-
-    for single_article in range(1, no_of_articles + 1):
-        article_xpath = f"(//li[@class='atl-post-list__tile'])[{single_article}]"
-
-        # checking featured post or not
-
-        try:
-            featured_post = String(xpath=f"{article_xpath}//span[text()='Featured']").parse_html(page_source)[0]
-
-            continue  # skip the featured post
-        except:
-            pass
-
-        # article link
-
-        base_url = "https://community.atlassian.com"
-        article_link = base_url + str(String(xpath=f"{article_xpath}//h3/a", attr="href").parse_html(page_source)[0])
-        published_date = str(
-            String(xpath=f"{article_xpath}//span[@class='atl-post-metric']").parse_html(page_source)[0]).strip()
-
-        no_of_likes = str(
-            String(xpath=f"{article_xpath}//*[@data-tooltip='Likes']/..").parse_html(page_source)[0]).strip()
-
-        # conversion
-        published_date = get_recent_date(published_date)
-
-        # days difference
-        days_difference = days_until_date(published_date)
-
-        if days_difference <= no_of_days:
-            all_articles_data.append([article_link, published_date, no_of_likes])
-
-
+    while keep_running:
+        if scraping_type == "1":
+            page_url = f"https://community.atlassian.com/t5/Jira-Service-Management/qa-p/jira-service-desk-questions/page/{page_no}?sort=recent"
         else:
+            page_url = f"https://community.atlassian.com/t5/Jira-Service-Management/bd-p/jira-service-desk-discussions/page/{page_no}?sort=recent"
+
+        response = requests.get(page_url)
+
+        if response.status_code != 200:
+            print(f"Failed to fetch the page. Status code: {response.status_code}")
+            break
+
+        page_source = str(response.text)
+
+        # total number of sections
+        no_of_articles = len(String(xpath='//li[@class="atl-post-list__tile"]').parse_html(page_source))
+
+        for single_article in range(1, no_of_articles + 1):
+            article_xpath = f"(//li[@class='atl-post-list__tile'])[{single_article}]"
+
+            # checking featured post or not
+
+            try:
+                featured_post = String(xpath=f"{article_xpath}//span[text()='Featured']").parse_html(page_source)[0]
+
+                continue  # skip the featured post
+            except:
+                pass
+
+            # article link
+
+            base_url = "https://community.atlassian.com"
+            article_link = base_url + str(
+                String(xpath=f"{article_xpath}//h3/a", attr="href").parse_html(page_source)[0])
+            published_date = str(
+                String(xpath=f"{article_xpath}//span[@class='atl-post-metric']").parse_html(page_source)[0]).strip()
+
+            no_of_likes = str(
+                String(xpath=f"{article_xpath}//*[@data-tooltip='Likes']/..").parse_html(page_source)[0]).strip()
+
+            # conversion
+            published_date = get_recent_date(published_date)
+
+            # days difference
+            days_difference = days_until_date(published_date)
+
+            if days_difference <= no_of_days:
+                all_articles_data.append([article_link, published_date, no_of_likes])
+
+
+            else:
+                keep_running = False
+                break
+
+        if no_of_articles == 0:
             keep_running = False
             break
 
-    if no_of_articles == 0:
-        keep_running = False
-        break
+        # increment page no
+        page_no += 1
 
-    # increment page no
-    page_no += 1
-    print(f"Page no {page_no} links scraped")
+
+
+        print(f"Page no {page_no} links scraped")
 
 # Scraping the articles
 all_json_response = []
@@ -223,7 +236,7 @@ for scraping_index, single_article_data in enumerate(all_articles_data):
     all_json_response.append(json_response)
 
 # Saving the data in json file
-with open(f"{file_name_slug}_output.json", "w") as f:
+with open(f"{file_name_slug}.json", "w") as f:
     json.dump(all_json_response, f, indent=4)
 
 print("Finished scraping")
